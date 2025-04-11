@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Need a reliable roofer in [Your Service Area]? Randy Roofman offers expert roof repair, replacement, and free, no-obligation inspections. Get honest advice and quality workmanship. Contact Randy today!">
+    <title>Randy Roofman - Your Trusted Local Roofing Specialist | Free Inspections</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">Randy Roofman</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#instant-quote">Instant Quote</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="header-contact">
+                <a href="tel:[Your Phone Number]">[Your Phone Number]</a>
+            </div>
+            <button id="mobile-menu-button" aria-label="Open Menu">&#9776;</button>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content container">
+            <h1>Protect Your Home with Expert Roofing by Randy Roofman</h1>
+            <p>Your trusted partner for reliable roof repairs, replacements, and maintenance in [Your Service Area]. Get peace of mind with quality materials and dedicated service.</p>
+            <button id="open-inspection-modal" class="cta-button">Get Your Free Inspection</button>
+        </div>
+    </section>
+
+    <section id="services" class="container content-section">
+        <h2>Comprehensive Roofing Services</h2>
+        <p class="section-intro">Whether you have a leak, storm damage, or an aging roof, I'm here to help. I offer personalized solutions tailored to your home's needs and your budget.</p>
+        <div class="service-items">
+            <div class="service-item">
+                <h3>Roof Inspections</h3>
+                <p>Catch small problems before they become big ones. I provide thorough inspections to assess your roof's condition and recommend honest solutions.</p>
+            </div>
+            <div class="service-item">
+                <h3>Roof Repair</h3>
+                <p>From missing shingles to leak fixes, I handle repairs promptly and effectively to extend the life of your current roof and prevent further damage.</p>
+            </div>
+            <div class="service-item">
+                <h3>Roof Replacement</h3>
+                <p>When it's time for a new roof, I guide you through material selection and ensure a high-quality installation that protects your home for years to come.</p>
+            </div>
+             <div class="service-item">
+                <h3>Storm Damage Assistance</h3>
+                <p>Navigating insurance claims after a storm can be stressful. I can help document damage and work with you through the process.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container content-section">
+        <h2>Meet Randy Roofman</h2>
+        <div class="about-content">
+            <p>Hi, I'm Randy Roofman, your local, dedicated roofing professional. With years of experience in the [Your Service Area] community, I understand the unique challenges our weather can pose to your home's roof. My approach is simple: provide honest assessments, quality workmanship, and clear communication from start to finish.</p>
+            <p>I believe in treating every home like it's my own. That means using reliable materials, paying attention to detail during installation or repair, and ensuring you're completely satisfied with the result. I'm not just selling a roof; I'm providing security and peace of mind for you and your family. Let's talk about how I can help protect your biggest investment.</p>
+        </div>
+    </section>
+
+    <section id="instant-quote" class="container content-section text-center">
+        <h2>Get an Instant Quote Estimate</h2>
+        <p>Want a quick idea of potential costs? Use this tool for an instant estimate. Scan the QR code with your phone or click the button below.</p>
+        <img src="images/randy-roofman-qr-code.jpg" alt="QR Code for Randy Roofman Instant Roofing Quote" class="qr-code">
+        <a href="https://qrco.de/Randy-Instant-Quote" target="_blank" rel="noopener noreferrer" class="cta-button">Get Instant Quote Now</a>
+        <p><small>Note: Instant quotes provide a preliminary estimate. A free, on-site inspection is recommended for an accurate, detailed proposal.</small></p>
+    </section>
+
+     <section id="contact" class="container content-section">
+        <h2>Ready to Talk Roofing?</h2>
+        <p>Whether you need an inspection, have questions about a repair, or are considering a replacement, I'm here to help. Reach out today for honest advice and a no-pressure conversation.</p>
+        <div class="contact-info">
+             <p><strong>Phone:</strong> <a href="tel:[Your Phone Number]">[Your Phone Number]</a></p>
+             <p><strong>Service Area:</strong> [Your Service Area] and surrounding communities.</p>
+             <p>Or, click below to request your detailed Free Inspection!</p>
+             <button id="open-inspection-modal-contact" class="cta-button">Request Free Inspection</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Randy Roofman. All Rights Reserved.</p>
+            </div>
+    </footer>
+
+    <div id="inspection-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-inspection-modal" class="close-button" aria-label="Close">&times;</button>
+            <h2>Request Your Free Roof Inspection</h2>
+            <p>Fill out the form below, and Randy will contact you shortly to schedule your no-obligation inspection.</p>
+            <form id="inspection-form">
+                 <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                 <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                 <div class="form-group">
+                    <label for="message">Brief Description (optional):</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Submit Request</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-overlay" class="hidden"></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
