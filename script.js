@@ -63,25 +63,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Form Submission Handling (Basic for Static Site) ---
-    if (inspectionForm) {
-        inspectionForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+  // Inside your script.js, replace the existing form submit handler
 
-            // **IMPORTANT:** For GitHub Pages (static), you can't process this server-side.
-            // Option 1: Use a third-party service like Formspree (https://formspree.io/)
-            //           - Set form action="YOUR_FORMSPREE_ENDPOINT" method="POST"
-            //           - The form will submit to Formspree, which emails you.
-            // Option 2: Display a simple confirmation message (as done here)
-            alert("Thank you for your request! Randy will contact you soon to schedule your inspection.");
-            closeModal(); // Close the modal after showing the message
-            inspectionForm.reset(); // Clear the form fields
+if (inspectionForm) {
+    inspectionForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
 
-            // Option 3: Use mailto: (less reliable, exposes email)
-            //           - Set form action="mailto:your.email@example.com" method="post" enctype="text/plain"
-        });
-    }
+        // Replace with your actual Deployed Google Apps Script Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxq98p-qb0taSMcTmLGgaWGS-c0gQfxv1rQpwIkMhhk8yfeRFH2gwEfKk_QP5Pr1UFK/exec';
+        const form = event.target; // Get the form element
+        const submitButton = form.querySelector('button[type="submit"]');
+        const formData = new FormData(form);
 
+        // Optional: Disable button during submission
+        if (submitButton) submitButton.disabled = true;
+        if (submitButton) submitButton.textContent = 'Submitting...';
+
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => response.json()) // Expect a JSON response from Apps Script
+            .then(data => {
+                console.log('Success:', data);
+                if (data.result === 'success') {
+                    alert("Thank you! Your request has been submitted successfully. Randy will contact you soon.");
+                    form.reset(); // Clear the form
+                    closeModal(); // Close the modal (if `closeModal` function is accessible here)
+                } else {
+                    // Log the detailed error from Apps Script if available
+                    console.error('Submission Error:', data.error || 'Unknown error from script.');
+                     alert("Oops! There was a problem submitting your request. Please try again or call Randy directly.");
+                }
+            })
+            .catch(error => {
+                console.error('Fetch Error:', error);
+                alert("Oops! There was an error sending your request. Please check your internet connection or call Randy directly.");
+            })
+            .finally(() => {
+                 // Re-enable button
+                 if (submitButton) submitButton.disabled = false;
+                 if (submitButton) submitButton.textContent = 'Submit Request';
+            });
+    });
+}
 
     // --- Footer: Update Copyright Year ---
     const currentYearSpan = document.getElementById('current-year');
