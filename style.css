@@ -2,8 +2,9 @@
 :root {
     --primary-color: #0a4a7a; /* Deep Blue */
     --secondary-color: #f8f9fa; /* Light Gray / White */
-    --accent-color: #06ff01; /* Lime Green for CTA
+    --accent-color: #06ff01; /* Lime Green for CTA */
     --text-color: #333;
+    --cta-text: #000000;
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Lato', sans-serif;
     --container-width: 1140px;
@@ -73,7 +74,7 @@ img {
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
-    color: #fff;
+    color: var(--cta-text);
     padding: 12px 25px;
     border: none;
     border-radius: 5px;
@@ -86,6 +87,7 @@ img {
 
 .cta-button:hover {
     background-color: #218838; /* Darker green */
+    color: #fff;
     text-decoration: none;
     transform: translateY(-2px);
 }
